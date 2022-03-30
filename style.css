@@ -7,6 +7,8 @@ body {
 /* Timer styles */
 h2 {
 text-align: center;
+padding-top: 20px;
+padding-bottom: 20px;
 }
 
 #timer-count {
@@ -25,6 +27,7 @@ p {
     margin: 0 auto;
     width: 300px;
     height: 500px;
+    
 }
 
 .control-btns {
