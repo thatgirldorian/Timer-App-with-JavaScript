@@ -41,6 +41,10 @@ p {
 }
 
 input {
-    width: 50px;
+    text-align: center;
+    width: 150px;
+    height: 150px;
     margin-top: 70px;
+    border-radius: 50%;
+    border: 2px solid purple;
 }
