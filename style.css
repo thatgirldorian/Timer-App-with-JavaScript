@@ -36,14 +36,15 @@ p {
 
 .control-btns button {
     display: inline;
-    margin-right: 20px;
+    margin-left: 55px;
+    margin-right: 55px;
     cursor: pointer;
 }
 
 input {
     text-align: center;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     margin-top: 70px;
     border-radius: 50%;
     border: 2px solid purple;
