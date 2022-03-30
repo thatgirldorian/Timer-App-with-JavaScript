@@ -1,13 +1,18 @@
 // console.log("Hey, this works!")
 
-//Use an event listener to watch for a click on the start button
-// onStartButtonClick = function onClick 
+//Use a class and a constructor function to create our timer object
+class Timer {
+    constructor(durationInput, startButton, pauseButton) {
+        this.durationInput = durationInput
+        this.startButton = startButton
+        this.pauseButton = pauseButton
 
-//Use a class and invoke our methods
-function onStartButtonClick (){
-    return "Hey there"
-}
+        //add event listener for startButton every time the button is clicked
+        this.startButton.addEventListener('click', this.start)
+    }
 
-onStartButtonClick = () => {
-    return "Hey, that'a an arrow function"
+    //create methods to start the timer
+    start() {
+        console.log("Timer starts now")
+    }
 }

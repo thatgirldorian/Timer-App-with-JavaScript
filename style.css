@@ -19,15 +19,20 @@ p {
 }
 
 .container {
-    border: 1px solid black;
+    border: 2px solid purple;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 8px;
     margin: 0 auto;
     width: 200px;
-    height: 200px;
+    height: 400px;
+}
+
+.control-btns {
+    padding-top: 70px;
 }
 
 .control-btns p {
     display: inline;
     padding-right: 20px;
+    cursor: pointer;
 }
