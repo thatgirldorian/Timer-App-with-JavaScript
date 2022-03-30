@@ -31,8 +31,13 @@ p {
     padding-top: 70px;
 }
 
-.control-btns p {
+.control-btns button {
     display: inline;
-    padding-right: 20px;
+    margin-right: 20px;
     cursor: pointer;
+}
+
+input {
+    width: 50px;
+    margin-top: 70px;
 }
