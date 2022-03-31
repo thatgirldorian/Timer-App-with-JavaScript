@@ -3,6 +3,9 @@
 //Use a class and a constructor function to create our timer object
 class Timer {
     constructor(durationInput, startButton, pauseButton) {
+        // //get the value of the "this" keyword
+        // console.log(this)
+
         this.durationInput = durationInput
         this.startButton = startButton
         this.pauseButton = pauseButton
@@ -13,12 +16,22 @@ class Timer {
     }
 
     //create methods to start and pause the timer
-    start() {
-        console.log("Timer starts now")
+    start = () => {
+        //have the timer count down with an interval of a second
+        this.tick()
+        this.timerCount = setInterval(this.tick, 1000)
+    
     }
 
-    pause() {
+    pause = () => {
+        //stop timer immediately when the pause button is clicked
+        clearInterval(this.timerCount)
         console.log("Timer is now paused")
+    }
+
+    // add countdown method
+    tick = () => {
+        console.log("tick")
     }
 }
 
@@ -29,3 +42,5 @@ const pauseButton = document.getElementById('pause')
 
 //create a new instance of the timer
 const timer = new Timer(durationInput, startButton, pauseButton)
+//make timer start when app page is refreshed
+// timer.start()
