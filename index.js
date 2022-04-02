@@ -15,12 +15,13 @@ class Timer {
         this.pauseButton.addEventListener('click', this.pause)
     }
 
+
     //create methods to start and pause the timer
     start = () => {
         //have the timer count down with an interval of a second
         this.tick()
         this.timerCount = setInterval(this.tick, 1000)
-    
+
     }
 
     pause = () => {
@@ -32,11 +33,14 @@ class Timer {
     // add countdown method
     tick = () => {
         console.log("tick")
+        const timeRemaining = parseFloat(this.durationInput.value)
+    //get the value of the timer duration
     }
+
 }
 
 //create variables for each of the elements
-const durationInput = document.getElementById('timer-count')
+const durationInput = document.getElementById('timer-duration')
 const startButton = document.getElementById('start')
 const pauseButton = document.getElementById('pause')
 
