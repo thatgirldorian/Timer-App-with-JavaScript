@@ -33,8 +33,23 @@ class Timer {
     // add countdown method
     tick = () => {
         console.log("tick")
-        const timeRemaining = parseFloat(this.durationInput.value)
-    //get the value of the timer duration
+        // const timeRemaining = this.timeRemaining
+        if (this.durationInput.value <= 0) {
+            this.pause();
+        } else {
+            //get the value of the timer duration
+            this.timeRemaining = this.timeRemaining - 1
+        }
+    }
+
+    //set getter and setter methods to retrieve a value from the class without explicitly calling it
+    get timeRemaining() {
+        return parseFloat(this.durationInput.value)
+        
+    }
+
+    set  timeRemaining(time) {
+        this.durationInput.value = time
     }
 
 }
