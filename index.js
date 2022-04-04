@@ -2,13 +2,16 @@
 
 //Use a class and a constructor function to create our timer object
 class Timer {
-    constructor(durationInput, startButton, pauseButton) {
+    constructor(durationInput, startButton, pauseButton, callbacks) {
         // //get the value of the "this" keyword
         // console.log(this)
 
         this.durationInput = durationInput
         this.startButton = startButton
         this.pauseButton = pauseButton
+        if (callbacks) {
+            this.onStart = callbacks.onStart
+        }
 
         //add event listener for startButton every time the button is clicked
         this.startButton.addEventListener('click', this.start)
@@ -16,8 +19,11 @@ class Timer {
     }
 
 
-    //create methods to start and pause the timer
+    //create methods to start (and pause) the timer
     start = () => {
+        if (this.onStart) {
+            this.onStart()
+        }
         //have the timer count down with an interval of a second
         this.tick()
         this.timerCount = setInterval(this.tick, 1000)
@@ -36,6 +42,8 @@ class Timer {
         // const timeRemaining = this.timeRemaining
         if (this.durationInput.value <= 0) {
             this.pause();
+            let mySound = new Audio('notification.wav')
+            mySound.play()
         } else {
             //get the value of the timer duration
             this.timeRemaining = this.timeRemaining - 1
@@ -60,6 +68,22 @@ const startButton = document.getElementById('start')
 const pauseButton = document.getElementById('pause')
 
 //create a new instance of the timer
-const timer = new Timer(durationInput, startButton, pauseButton)
+const timer = new Timer(durationInput, startButton, pauseButton, {
+    //add callback functions to notify the user about timer actions
+    onStart () {
+
+
+    },
+    onTick () {
+        //play a sound when tick gets called
+
+    },
+    onComplete () {
+        //add a way to play a sound when timer is complete
+        let mySound = new Audio('notification.wav')
+        mySound.play()
+
+    }
+})
 //make timer start when app page is refreshed
 // timer.start()
