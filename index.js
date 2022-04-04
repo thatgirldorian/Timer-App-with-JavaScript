@@ -11,6 +11,8 @@ class Timer {
         this.pauseButton = pauseButton
         if (callbacks) {
             this.onStart = callbacks.onStart
+            this.onTick  = callbacks.onTick
+            this.onComplete = callbacks.onComplete
         }
 
         //add event listener for startButton every time the button is clicked
@@ -42,8 +44,9 @@ class Timer {
         // const timeRemaining = this.timeRemaining
         if (this.durationInput.value <= 0) {
             this.pause();
-            let mySound = new Audio('notification.wav')
-            mySound.play()
+            if (this.onComplete) {
+                this.onComplete()
+            }
         } else {
             //get the value of the timer duration
             this.timeRemaining = this.timeRemaining - 1
@@ -85,5 +88,3 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
 
     }
 })
-//make timer start when app page is refreshed
-// timer.start()
