@@ -97,7 +97,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
     },
     onComplete () {
         //add a way to play a sound when timer is complete
-        let mySound = new Audio('notification.wav')
+        let mySound = new Audio('ding.mp3')
         mySound.play()
 
     }
