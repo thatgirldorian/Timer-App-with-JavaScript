@@ -24,11 +24,11 @@ class Timer {
     //create methods to start (and pause) the timer
     start = () => {
         if (this.onStart) {
-            this.onStart()
+            this.onStart(this.timeRemaining)
         }
         //have the timer count down with an interval of a second
         this.tick()
-        this.timerCount = setInterval(this.tick, 1000)
+        this.timerCount = setInterval(this.tick, 20)
 
     }
 
@@ -40,17 +40,22 @@ class Timer {
 
     // add countdown method
     tick = () => {
+        
         console.log("tick")
         // const timeRemaining = this.timeRemaining
-        if (this.durationInput.value <= 0) {
+        if (this.timeRemaining <= 0) {
             this.pause();
             if (this.onComplete) {
                 this.onComplete()
             }
         } else {
             //get the value of the timer duration
-            this.timeRemaining = this.timeRemaining - 1
+            this.timeRemaining = this.timeRemaining - 0.02
+            if (this.onTick) {
+                this.onTick(this.timeRemaining)
+            }
         }
+
     }
 
     //set getter and setter methods to retrieve a value from the class without explicitly calling it
@@ -60,7 +65,7 @@ class Timer {
     }
 
     set  timeRemaining(time) {
-        this.durationInput.value = time
+        this.durationInput.value = time.toFixed(2)
     }
 
 }
@@ -69,17 +74,26 @@ class Timer {
 const durationInput = document.getElementById('timer-duration')
 const startButton = document.getElementById('start')
 const pauseButton = document.getElementById('pause')
+const circle = document.getElementById('circle')
 
+//get the dynamic value of the radius & stroke-dasharray
+const perimeter = circle.getAttribute('r') * 2 * Math.PI
+circle.setAttribute('stroke-dasharray', perimeter)
+
+
+let duration;
 //create a new instance of the timer
 const timer = new Timer(durationInput, startButton, pauseButton, {
     //add callback functions to notify the user about timer actions
-    onStart () {
-
-
+    onStart(totalDuration) {
+        duration = totalDuration
     },
-    onTick () {
-        //play a sound when tick gets called
-
+    onTick(timeRemaining) {
+        //make animation work every time a timer is ticked
+        // console.log('1.', circle.getAttribute('stroke-dashoffset'))
+        circle.setAttribute('stroke-dashoffset', 
+            perimeter * timeRemaining / duration - perimeter
+        )
     },
     onComplete () {
         //add a way to play a sound when timer is complete

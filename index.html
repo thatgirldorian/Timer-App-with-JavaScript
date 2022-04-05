@@ -14,24 +14,26 @@
 
     <h2>timer.</h2>
     <div class="container">
+
+        
+
         <svg height="300" width="300">
-            <circle 
+            <circle
+            id="circle" 
             r="120" 
             cx="150" 
             cy="150"
             fill="transparent"
             stroke="blue"
             stroke-width="8"
-            stroke-dasharray="745"
-            stroke-dashoffset="0"
             transform="rotate(-90 150 150)"
-            <input id="timer-duration" value="30">
             </circle>
         </svg>
-        
+        <input id="timer-duration" value="30">
         <div class="control-btns">
-            <button id="start">&#9658</button>
-            <button id="pause">&#10074 &#10074;</button>
+            <img id="start" src="./images/play-circle.svg">
+            <img id="pause" src="./images/pause-circle.svg">
+            <!-- <button id="pause">&#10074 &#10074;</button> -->
         </div>
     </div>
     
