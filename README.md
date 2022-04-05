@@ -3,7 +3,7 @@
 This is an application that allows you to set a timer. It works like a stop watch and can count down from a number of seconds. I created it with vanilla JavaScript.
 
 <h3>Issued faced & resolution:</h3>
-I struggled with finding a way to give the circle's stroke attribute a gradient color. However, I was able to resolve this by setting the linearGradient in the *def* attribute like so:
+I struggled with finding a way to give the circle's stroke attribute a gradient color. However, I was able to resolve this by setting the linearGradient in the <b>def</b> attribute like so:
 
                 <defs>
                     <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
