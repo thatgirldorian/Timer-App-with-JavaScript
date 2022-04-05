@@ -18,18 +18,25 @@
         
 
         <svg height="300" width="300">
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#00bc9b" />
+                    <stop offset="100%" stop-color="#5eaefd" />
+                    </linearGradient>
+                </defs>
             <circle
             id="circle" 
             r="120" 
             cx="150" 
             cy="150"
             fill="transparent"
-            stroke="blue"
+            stroke="url(#gradient)"
             stroke-width="8"
             transform="rotate(-90 150 150)"
             </circle>
         </svg>
         <input id="timer-duration" value="30">
+        <p id="timer-text">seconds</p>
         <div class="control-btns">
             <img id="start" src="./images/play-circle.svg">
             <img id="pause" src="./images/pause-circle.svg">

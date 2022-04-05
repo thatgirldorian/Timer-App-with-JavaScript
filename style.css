@@ -14,6 +14,17 @@ padding-bottom: 20px;
 #timer-duration {
     font-weight: bold;
     font-size: 45px;
+    color: black;
+    position: relative;
+    bottom: 200px;
+    background: none;
+}
+
+#timer-text {
+    color: black;
+    font-size: 18px;
+    position: relative;
+    bottom: 200px;
 }
 
 p {
@@ -31,10 +42,10 @@ p {
 }
 
 .control-btns {
-    padding-top: 70px;
+    padding-top: -40px;
 }
 
-.control-btns button {
+.control-btns img {
     display: inline;
     margin-left: 20px;
     margin-right: 20px;
@@ -42,8 +53,6 @@ p {
     cursor: pointer;
     border: none;
     border-radius: 8px;
-    background-color: grey;
-    color: white;
 }
 
 input {
@@ -52,9 +61,11 @@ input {
     /* height: 200px; */
     /* margin-top: 70px; */
     border: none;
+    outline: none;
     /* border: 8px solid grey; */
 }
 
 svg {
-    margin-top: 20px;
+    margin-top: 30px;
+    
 }
