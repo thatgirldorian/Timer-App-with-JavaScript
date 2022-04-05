@@ -2,7 +2,7 @@
 
 This is an application that allows you to set a timer. It works like a stop watch and can count down from a number of seconds. I created it with vanilla JavaScript.
 
-<h3>Issued faced & resolution</h3>:
+<h3>Issued faced & resolution:</h3>
 I struggled with finding a way to give the circle's stroke attribute a gradient color. However, I was able to resolve this by setting the linearGradient in the *def* attribute like so:
 
                 <defs>
@@ -12,7 +12,7 @@ I struggled with finding a way to give the circle's stroke attribute a gradient 
                     </linearGradient>
                 </defs>
 
-<h3>Technology Used:</h3>
+<h3>Technology used:</h3>
 
 - HTML
 - CSS
@@ -24,3 +24,4 @@ I struggled with finding a way to give the circle's stroke attribute a gradient 
 https://timer-app1.netlify.app/
 
 <h3>Screenshot:</h3>
+<img width="729" alt="Screen Shot 2022-04-05 at 9 28 23 PM" src="https://user-images.githubusercontent.com/40691059/161817490-6f4f54de-6234-4c1e-a119-f24f332aa2d5.png">
